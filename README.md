@@ -15,7 +15,13 @@ For example, if you use the chessboard1.png image with the current versions of t
 
 The output of this script is the camera matrix, distortion coefficients, the rotation vecotrs and teh translation vectors.
 
+If nothing outputs from the scripts, type "ret" into the shell, this should say "False". This means that the cv2 module cannot find the chessboard layout you are proposing; perhaps you have your number of squares across and down incorrect or just the wrong way round? Or maybe you haven't told it to open the correct image.
+
 # chessboard_correction.py
 
 Edit teh values of K and d with the camera matrix and distortion coefficients respectively. These can be determined using the chessboard_coefficients script. Also edit the image name & directory (if required).
+
+# chessboard1.png
+
+use this image alongside chessboard_coefficients.py to see how the scripots ca be used successfully
 
