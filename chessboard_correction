@@ -2,21 +2,23 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-# Define camera matrix K
-K = np.array([[  1.49714265e+06,   0.00000000e+00,   3.49321223e+02],
-       [  0.00000000e+00,   1.49731648e+06,   3.56030083e+02],
-       [  0.00000000e+00,   0.00000000e+00,   1.00000000e+00]])
+
+K=np.array([[  5.10260934e+03 ,  0.00000000e+00,   7.58249618e+02],
+ [  0.00000000e+00  , 2.36891166e+03 ,  5.46932220e+02],
+ [  0.00000000e+00,   0.00000000e+00 ,  1.00000000e+00]]
+)
 
 
 
 # Define distortion coefficients d
-d = np.array([[ -2.38587390e+02,  -1.04112464e-05,   5.23119713e-03,
-         -1.42938095e-04,  -4.85884855e-13]])
+d = np.array([[ -8.45353906e-02 ,  3.44200997e+00 ,  1.88306510e-03 , -3.70174586e-04,
+   -4.78820505e+01]]
+)
 
 
 
 # Read an example image and acquire its size
-img = cv2.imread("barrel2.jpg")
+img = cv2.imread("chessboard1.png")
 h, w = img.shape[:2]
 
 # Generate new camera matrix from parameters
@@ -34,5 +36,5 @@ oldimg_ax.imshow(img)
 oldimg_ax.set_title('Original image')
 newimg_ax.imshow(newimg)
 newimg_ax.set_title('Unwarped image')
-cv2.imshow('img',newimg)
+#cv2.imshow('img',newimg)
 plt.show()
